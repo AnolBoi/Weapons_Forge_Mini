@@ -2,6 +2,7 @@ package net.anoltongi.theforge.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import net.anoltongi.theforge.item.custom.sword.BaseLevelableSwordItem;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
@@ -19,8 +20,8 @@ public class ModCommands {
                             int level = IntegerArgumentType.getInteger(context, "level");
 
                             ItemStack held = player.getMainHandItem();
-                            if (held.getItem() instanceof net.anoltongi.theforge.item.custom.BaseLevelableSwordItem) {
-                                net.anoltongi.theforge.item.custom.BaseLevelableSwordItem.setItemLevel(held, level);
+                            if (held.getItem() instanceof BaseLevelableSwordItem) {
+                                BaseLevelableSwordItem.setItemLevel(held, level);
                                 player.sendSystemMessage(Component.literal("Set item level to " + level));
                             } else {
                                 player.sendSystemMessage(Component.literal("You are not holding a levelable sword."));

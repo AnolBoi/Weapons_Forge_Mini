@@ -1,6 +1,6 @@
 package net.anoltongi.theforge.item;
 import net.anoltongi.theforge.TheForgeMod;
-import net.anoltongi.theforge.item.custom.*;
+import net.anoltongi.theforge.item.custom.sword.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
@@ -35,10 +35,10 @@ public class ModItems {
             () -> new GildedSwordItem(new Item.Properties().durability(1600)));
 
     public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword",
-            () -> new AmethystSwordItem(new Item.Properties().durability(1000)));
+            () -> new AmethystSwordItem(new Item.Properties().durability(1200)));
 
     public static final RegistryObject<Item> SILVER_SWORD = ITEMS.register("silver_sword",
-            () -> new SwordItem(Tiers.IRON, 2, -2.42f, new Item.Properties().durability(250)));
+            () -> new SilverSwordItem(new Item.Properties().durability(600)));
 
     public static final RegistryObject<Item> BLOODLUST_SWORD = ITEMS.register("bloodlust_sword",
             () -> new BloodlustSwordItem(new Item.Properties().durability(1800)));
@@ -50,7 +50,22 @@ public class ModItems {
             () -> new HarbingerOfDesireSwordItem(new Item.Properties().durability(1800)));
 
     public static final RegistryObject<Item> STAR_CALLER_SWORD = ITEMS.register("star_caller_sword",
-            () -> new StarCallerSwordItem(new Item.Properties().durability(1800)));
+            () -> new StarCallerSwordItem(new Item.Properties().durability(1700)));
+
+    public static final RegistryObject<Item> CUSTOM_DIAMOND_SWORD = ITEMS.register("custom_diamond_sword",
+            () -> new CustomDiamondSwordItem(new Item.Properties().durability(1600)));
+
+    public static final RegistryObject<Item> CUSTOM_GOLDEN_SWORD = ITEMS.register("custom_golden_sword",
+            () -> new CustomGoldenSwordItem(new Item.Properties().durability(100)));
+
+    public static final RegistryObject<Item> CUSTOM_IRON_SWORD = ITEMS.register("custom_iron_sword",
+            () -> new CustomIronSwordItem(new Item.Properties().durability(600)));
+
+    public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword",
+            () -> new CustomIronSwordItem(new Item.Properties().durability(120)));
+
+    public static final RegistryObject<Item> CUSTOM_NETHERITE_SWORD = ITEMS.register("custom_netherite_sword",
+            () -> new CustomNetheriteSwordItem(new Item.Properties().durability(2200)));
 
 
 

@@ -18,7 +18,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
         handheldItem(ModItems.GILDED_ROSE_QUARTZ_SWORD);
         handheldItem(ModItems.GILDED_BLAZE_QUARTZ_SWORD);
         handheldItem(ModItems.GILDED_LAVENDER_QUARTZ_SWORD);
@@ -32,6 +31,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SOULSTEALER_SWORD);
         handheldItem(ModItems.HARBINGER_OF_DESIRE_SWORD);
         handheldItem(ModItems.STAR_CALLER_SWORD);
+        handheldItem(ModItems.CUSTOM_DIAMOND_SWORD);
+        handheldItem(ModItems.CUSTOM_GOLDEN_SWORD);
+        handheldItem(ModItems.CUSTOM_IRON_SWORD);
+        handheldItem(ModItems.COPPER_SWORD);
+        handheldItem(ModItems.CUSTOM_NETHERITE_SWORD);
 
     }
 

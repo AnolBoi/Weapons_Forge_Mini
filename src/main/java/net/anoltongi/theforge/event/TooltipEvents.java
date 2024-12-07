@@ -1,6 +1,6 @@
 package net.anoltongi.theforge.event;
 
-import net.anoltongi.theforge.item.custom.BaseLevelableSwordItem;
+import net.anoltongi.theforge.item.custom.sword.BaseLevelableSwordItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -30,7 +30,9 @@ public class TooltipEvents {
                 if (text.startsWith("-") && (text.contains("Attack Damage") || text.contains("Attack Speed"))) {
                     return true;
                 }
-
+                while (!tooltip.isEmpty() && tooltip.get(tooltip.size() - 1).getString().trim().isEmpty()) {
+                    tooltip.remove(tooltip.size() - 1);
+                }
                 return false;
             });
         }

@@ -30,8 +30,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SOULSTEALER_SWORD.get());
                         output.accept(ModItems.HARBINGER_OF_DESIRE_SWORD.get());
                         output.accept(ModItems.STAR_CALLER_SWORD.get());
-
-
+                        output.accept(ModItems.COPPER_SWORD.get());
+                        output.accept(ModItems.SILVER_SWORD.get());
+                        output.accept(ModItems.CUSTOM_IRON_SWORD.get());
+                        output.accept(ModItems.CUSTOM_GOLDEN_SWORD.get());
+                        output.accept(ModItems.CUSTOM_DIAMOND_SWORD.get());
+                        output.accept(ModItems.CUSTOM_NETHERITE_SWORD.get());
 
                     }).build());
 
