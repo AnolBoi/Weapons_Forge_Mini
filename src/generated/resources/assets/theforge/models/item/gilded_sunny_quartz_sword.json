@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "theforge:item/gilded_sunny_quartz_sword"
+  }
+}
