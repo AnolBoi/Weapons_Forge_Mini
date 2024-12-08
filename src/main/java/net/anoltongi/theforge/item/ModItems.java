@@ -67,6 +67,20 @@ public class ModItems {
     public static final RegistryObject<Item> CUSTOM_NETHERITE_SWORD = ITEMS.register("custom_netherite_sword",
             () -> new CustomNetheriteSwordItem(new Item.Properties().durability(2200)));
 
+    public static final RegistryObject<Item> GLOOM_BLADE_SWORD = ITEMS.register("gloom_blade_sword",
+            () -> new GloomBladeSwordItem(new Item.Properties().durability(1700)));
+
+    public static final RegistryObject<Item> CUSTOM_WOODEN_SWORD = ITEMS.register("custom_wooden_sword",
+            () -> new CustomWoodenSwordItem(new Item.Properties().durability(60)));
+
+    public static final RegistryObject<Item> CUSTOM_STONE_SWORD = ITEMS.register("custom_stone_sword",
+            () -> new CustomStoneSwordItem(new Item.Properties().durability(120)));
+
+    public static final RegistryObject<Item> ZINC_SWORD = ITEMS.register("zinc_sword",
+            () -> new ZincSwordItem(new Item.Properties().durability(350)));
+
+    public static final RegistryObject<Item> BRASS_SWORD = ITEMS.register("brass_sword",
+            () -> new BrassSwordItem(new Item.Properties().durability(2000)));
 
 
 

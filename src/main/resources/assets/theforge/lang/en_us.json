@@ -18,5 +18,12 @@
   "item.theforge.custom_golden_sword": "Golden Sword",
   "item.theforge.custom_iron_sword": "Iron Sword",
   "item.theforge.copper_sword": "Copper Sword",
-  "item.theforge.custom_netherite_sword": "Netherite Sword"
+  "item.theforge.custom_netherite_sword": "Netherite Sword",
+  "item.theforge.gloom_blade_sword": "Gloomblade",
+  "item.theforge.custom_wooden_sword": "Wooden Sword",
+  "item.theforge.custom_stone_sword": "Stone Sword",
+  "item.theforge.zinc_sword": "Zinc Sword",
+  "item.theforge.brass_sword": "Brass Sword",
+
+  "effect.theforge.fear": "Fear"
 }

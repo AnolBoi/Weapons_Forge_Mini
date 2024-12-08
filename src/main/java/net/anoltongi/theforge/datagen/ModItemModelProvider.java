@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -36,7 +37,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.CUSTOM_IRON_SWORD);
         handheldItem(ModItems.COPPER_SWORD);
         handheldItem(ModItems.CUSTOM_NETHERITE_SWORD);
-
+        handheldItem(ModItems.GLOOM_BLADE_SWORD);
+        handheldItem(ModItems.CUSTOM_WOODEN_SWORD);
+        handheldItem(ModItems.CUSTOM_STONE_SWORD);
+        handheldItem(ModItems.ZINC_SWORD);
+        handheldItem(ModItems.BRASS_SWORD);
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

@@ -64,21 +64,6 @@ public class BloodlustSwordItem extends BaseLevelableSwordItem {
         tooltip.add(Component.literal(String.format("%.2f", finalSpeed) + " Attack Speed ").withStyle(ChatFormatting.DARK_GREEN));
     }
 
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack itemStack = player.getItemInHand(hand);
-
-        if (!level.isClientSide) {
-            player.hurt(level.damageSources().generic(), 4.0F);
-
-            CompoundTag tag = itemStack.getOrCreateTag();
-            tag.putBoolean("EnhancedDamage", true);
-
-            player.getCooldowns().addCooldown(this, 100);
-        }
-
-        return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
-    }
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
@@ -98,25 +83,9 @@ public class BloodlustSwordItem extends BaseLevelableSwordItem {
                     player.heal(lifestealAmount);
                 }
             }
-
-            CompoundTag tag = stack.getOrCreateTag();
-            if (tag != null && tag.getBoolean("EnhancedDamage")) {
-                float extraDamage = 4.0F;
-                target.hurt(player.level().damageSources().playerAttack(player), extraDamage);
-
-                tag.putBoolean("EnhancedDamage", false);
-            }
         }
 
         return result;
-    }
-    @Override
-    public boolean isFoil(ItemStack stack) {
-        CompoundTag tag = stack.getTag();
-        if (tag != null && tag.getBoolean("EnhancedDamage")) {
-            return true;
-        }
-        return super.isFoil(stack);
     }
     @Override
     public Component getName(ItemStack stack) {

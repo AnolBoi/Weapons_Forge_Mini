@@ -1,11 +1,9 @@
 package net.anoltongi.theforge.item.custom.sword;
 
+import net.anoltongi.theforge.effect.ModEffects;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -21,12 +19,12 @@ import net.minecraft.world.phys.AABB;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class StarCallerSwordItem extends BaseLevelableSwordItem{
-    public StarCallerSwordItem(Properties properties) {
-        super(Tiers.DIAMOND, 4.5F, -2.45F, properties);
+public class GloomBladeSwordItem extends BaseLevelableSwordItem {
+    public GloomBladeSwordItem(Properties properties) {
+        super(Tiers.DIAMOND, 9, -2.45F, properties);
     }
 
-    protected int maxLevelStar = 10;
+    protected int maxLevelGloom = 10;
 
     @Override
     protected double getDamageForLevel(int level) {
@@ -61,12 +59,49 @@ public class StarCallerSwordItem extends BaseLevelableSwordItem{
             default: return 1.6;
         }
     }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+        if (!level.isClientSide) {
+            AABB area = new AABB(player.getX() - 10, player.getY() - 10, player.getZ() - 10,
+                    player.getX() + 10, player.getY() + 10, player.getZ() + 10);
+            List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, area,
+                    e -> e != player && e.isAlive());
+            for (LivingEntity e : entities) {
+                e.addEffect(new MobEffectInstance(ModEffects.FEAR.get(), 100, 0, false, false,true));
+            }
+            switch (getItemLevel(stack)) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    player.getCooldowns().addCooldown(this, 600);
+                    break;
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    player.getCooldowns().addCooldown(this, 500);
+                    break;
+                case 10:
+                    player.getCooldowns().addCooldown(this, 400);
+                    break;
+                default:
+                    player.getCooldowns().addCooldown(this, 600);
+                    break;
+            }
+        }
+        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+    }
+
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(stack, level, tooltip, flag);
 
         int itemLevel = getItemLevel(stack);
-        tooltip.add(Component.literal("Current Level: " + itemLevel + "/" + maxLevelStar).withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("Current Level: " + itemLevel + "/" + maxLevelGloom).withStyle(ChatFormatting.GRAY));
 
         tooltip.add(Component.literal(" "));
 
@@ -75,54 +110,6 @@ public class StarCallerSwordItem extends BaseLevelableSwordItem{
 
         double finalSpeed = getSpeedForLevel(itemLevel);
         tooltip.add(Component.literal(String.format("%.2f", finalSpeed) + " Attack Speed ").withStyle(ChatFormatting.DARK_GREEN));
-    }
-
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack itemStack = player.getItemInHand(hand);
-
-        if (!level.isClientSide) {
-            double radius = 5.0D;
-
-            AABB area = player.getBoundingBox().inflate(radius);
-
-            List<LivingEntity> nearbyEntities = level.getEntitiesOfClass(LivingEntity.class, area,
-                    (entity) -> entity != player && entity.isAlive());
-
-            int duration = 4;
-            int amplifier = 40;
-
-            for (LivingEntity target : nearbyEntities) {
-                target.addEffect(new MobEffectInstance(MobEffects.LEVITATION, duration, amplifier, false, false, true));
-            }
-
-            player.getCooldowns().addCooldown(this, 100);
-
-            level.playSound(null, player.blockPosition(), SoundEvents.ILLUSIONER_CAST_SPELL,
-                    SoundSource.PLAYERS, 1.0F, 1.0F);
-        }
-
-        if (level.isClientSide) {
-            spawnSparkleParticles(level, player);
-        }
-
-        return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide);
-    }
-
-    private void spawnSparkleParticles(Level level, Player player) {
-        double px = player.getX();
-        double py = player.getY() + player.getEyeHeight(player.getPose());
-        double pz = player.getZ();
-
-        for (int i = 0; i < 20; i++) {
-            double offsetX = (level.random.nextDouble() - 0.5) * 0.5;
-            double offsetY = (level.random.nextDouble() - 0.5) * 0.5;
-            double offsetZ = (level.random.nextDouble() - 0.5) * 0.5;
-
-            level.addParticle(ParticleTypes.ASH,
-                    px + offsetX, py + offsetY, pz + offsetZ,
-                    0, 0.02, 0);
-        }
     }
     @Override
     public Component getName(ItemStack stack) {
