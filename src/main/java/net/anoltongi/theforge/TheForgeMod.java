@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.anoltongi.theforge.block.ModBlocks;
 import net.anoltongi.theforge.command.ModCommands;
 import net.anoltongi.theforge.effect.ModEffects;
+import net.anoltongi.theforge.init.ModEntities;
 import net.anoltongi.theforge.item.ModCreativeModeTabs;
 import net.anoltongi.theforge.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -34,6 +35,8 @@ public class TheForgeMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModCreativeModeTabs.register(modEventBus);
+
+        ModEntities.ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
