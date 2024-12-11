@@ -1,7 +1,10 @@
 package net.anoltongi.theforge.item.custom.sword;
 
 import net.anoltongi.theforge.effect.ModEffects;
+import net.anoltongi.theforge.entity.BlackHoleEntity;
+import net.anoltongi.theforge.init.ModEntities;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.InteractionHand;
@@ -19,12 +22,12 @@ import net.minecraft.world.phys.AABB;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class GloomBladeSwordItem extends BaseLevelableSwordItem {
-    public GloomBladeSwordItem(Properties properties) {
+public class CallOfTheVoidSwordItem extends BaseLevelableSwordItem {
+    public CallOfTheVoidSwordItem(Properties properties) {
         super(Tiers.DIAMOND, 9, -2.45F, properties);
     }
 
-    private static final int maxLevelGloom = 10;
+    protected int maxLevelVoid = 10;
 
     @Override
     protected double getDamageForLevel(int level) {
@@ -64,34 +67,24 @@ public class GloomBladeSwordItem extends BaseLevelableSwordItem {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide) {
-            AABB area = new AABB(player.getX() - 10, player.getY() - 10, player.getZ() - 10,
-                    player.getX() + 10, player.getY() + 10, player.getZ() + 10);
-            List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, area,
-                    e -> e != player && e.isAlive());
-            for (LivingEntity e : entities) {
-                e.addEffect(new MobEffectInstance(ModEffects.FEAR.get(), 100, 0, false, false,true));
+
+            var look = player.getLookAngle();
+            double distance = 5.0;
+            double spawnX = player.getX() + look.x * distance;
+            double spawnY = player.getY() + look.y * distance;
+            double spawnZ = player.getZ() + look.z * distance;
+
+            if (level.getBlockState(new BlockPos((int) spawnX, (int) spawnY, (int) spawnZ)).isAir()) {
+                BlackHoleEntity blackHole = new BlackHoleEntity(ModEntities.BLACK_HOLE.get(), level);
+                blackHole.setPos(spawnX, spawnY, spawnZ);
+                level.addFreshEntity(blackHole);
+            } else {
+                player.displayClientMessage(Component.literal("Not enough space to create a black hole!"), true);
             }
-            switch (getItemLevel(stack)) {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    player.getCooldowns().addCooldown(this, 600);
-                    break;
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                    player.getCooldowns().addCooldown(this, 500);
-                    break;
-                case 10:
-                    player.getCooldowns().addCooldown(this, 400);
-                    break;
-                default:
-                    player.getCooldowns().addCooldown(this, 600);
-                    break;
-            }
+
+            BlackHoleEntity blackHole = new BlackHoleEntity(ModEntities.BLACK_HOLE.get(), level);
+            blackHole.setPos(spawnX, spawnY, spawnZ);
+            level.addFreshEntity(blackHole);
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }
@@ -101,7 +94,7 @@ public class GloomBladeSwordItem extends BaseLevelableSwordItem {
         super.appendHoverText(stack, level, tooltip, flag);
 
         int itemLevel = getItemLevel(stack);
-        tooltip.add(Component.literal("Current Level: " + itemLevel + "/" + maxLevelGloom).withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("Current Level: " + itemLevel + "/" + maxLevelVoid).withStyle(ChatFormatting.GRAY));
 
         tooltip.add(Component.literal(" "));
 

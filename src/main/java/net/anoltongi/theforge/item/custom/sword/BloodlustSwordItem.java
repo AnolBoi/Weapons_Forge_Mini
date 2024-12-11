@@ -22,7 +22,7 @@ public class BloodlustSwordItem extends BaseLevelableSwordItem {
         super(Tiers.DIAMOND, 4, -2.45F, properties);
     }
 
-    protected int maxLevelBloodlust = 5;
+    private static final int maxLevelBloodlust = 5;
 
     @Override
     protected double getDamageForLevel(int level) {

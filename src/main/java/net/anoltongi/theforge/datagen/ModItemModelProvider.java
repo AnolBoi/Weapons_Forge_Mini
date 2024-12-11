@@ -42,6 +42,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.CUSTOM_STONE_SWORD);
         handheldItem(ModItems.ZINC_SWORD);
         handheldItem(ModItems.BRASS_SWORD);
+        handheldItem(ModItems.CALL_OF_THE_VOID_SWORD);
+        handheldItem(ModItems.AURORAS_EDGE_SWORD);
+        handheldItem(ModItems.SUNKEN_BLADE_SWORD);
+        handheldItem(ModItems.GLACIAL_WALTZ_SWORD);
+        handheldItem(ModItems.SEISMIC_BLADE_SWORD);
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

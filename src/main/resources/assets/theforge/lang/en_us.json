@@ -24,6 +24,12 @@
   "item.theforge.custom_stone_sword": "Stone Sword",
   "item.theforge.zinc_sword": "Zinc Sword",
   "item.theforge.brass_sword": "Brass Sword",
+  "item.theforge.call_of_the_void": "Call of The Void",
+  "item.theforge.auroras_edge": "Aurora's Edge",
+  "item.theforge.sunken_blade": "Sunken Blade",
+  "item.theforge.glacial_waltz": "Glacial Waltz",
+  "item.theforge.seismic_blade": "Seismic Blade",
 
-  "effect.theforge.fear": "Fear"
+  "effect.theforge.fear": "Fear",
+  "effect.theforge.freezing": "Freezing"
 }

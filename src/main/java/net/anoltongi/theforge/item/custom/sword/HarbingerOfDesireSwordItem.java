@@ -21,7 +21,7 @@ public class HarbingerOfDesireSwordItem extends BaseLevelableSwordItem {
             super(Tiers.DIAMOND, 9, -2.45F, properties);
         }
 
-    protected int maxLevelHarbinger = 5;
+    private static final int maxLevelHarbinger = 5;
 
     @Override
     protected double getDamageForLevel(int level) {

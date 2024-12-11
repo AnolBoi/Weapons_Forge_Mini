@@ -82,6 +82,22 @@ public class ModItems {
     public static final RegistryObject<Item> BRASS_SWORD = ITEMS.register("brass_sword",
             () -> new BrassSwordItem(new Item.Properties().durability(2000)));
 
+    public static final RegistryObject<Item> CALL_OF_THE_VOID_SWORD = ITEMS.register("call_of_the_void",
+            () -> new CallOfTheVoidSwordItem(new Item.Properties().durability(1800)));
+
+    public static final RegistryObject<Item> AURORAS_EDGE_SWORD = ITEMS.register("auroras_edge",
+            () -> new AurorasEdgeSwordItem(new Item.Properties().durability(1800)));
+
+    public static final RegistryObject<Item> SUNKEN_BLADE_SWORD = ITEMS.register("sunken_blade",
+            () -> new SunkenBladeSwordItem(new Item.Properties().durability(1400)));
+
+    public static final RegistryObject<Item> GLACIAL_WALTZ_SWORD = ITEMS.register("glacial_waltz",
+            () -> new GlacialWaltzSwordItem(new Item.Properties().durability(1000)));
+
+    public static final RegistryObject<Item> SEISMIC_BLADE_SWORD = ITEMS.register("seismic_blade",
+            () -> new SeismicBladeSwordItem(new Item.Properties().durability(2200)));
+
+
 
 
     public static void register(IEventBus eventBus) {

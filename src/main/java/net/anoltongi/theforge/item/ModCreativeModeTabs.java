@@ -41,7 +41,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CUSTOM_DIAMOND_SWORD.get());
                         output.accept(ModItems.BRASS_SWORD.get());
                         output.accept(ModItems.CUSTOM_NETHERITE_SWORD.get());
-
+                        output.accept(ModItems.CALL_OF_THE_VOID_SWORD.get());
+                        output.accept(ModItems.AURORAS_EDGE_SWORD.get());
+                        output.accept(ModItems.SUNKEN_BLADE_SWORD.get());
+                        output.accept(ModItems.GLACIAL_WALTZ_SWORD.get());
+                        output.accept(ModItems.SEISMIC_BLADE_SWORD.get());
                     }).build());
 
 

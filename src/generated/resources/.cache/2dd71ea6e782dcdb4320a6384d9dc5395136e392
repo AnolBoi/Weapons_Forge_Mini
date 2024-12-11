@@ -1,7 +1,9 @@
-// 1.20.1	2024-12-08T23:03:48.9427725	Item Models: theforge
+// 1.20.1	2024-12-11T21:21:31.2576153	Item Models: theforge
 d324d835bc7e880c93d4e216e0d79284f21a0de3 assets/theforge/models/item/amethyst_sword.json
+784cabb19f984200f29fbb661c1f0f50a7a81384 assets/theforge/models/item/auroras_edge.json
 fbc1bc5c5e832ab99c6b3d6c3eeb8dc973df2fcf assets/theforge/models/item/bloodlust_sword.json
 e0291940fee9a53bc75a0f0a65d04edc91938527 assets/theforge/models/item/brass_sword.json
+06baa6357a2908c30fd464e8f547927fa1c1ea98 assets/theforge/models/item/call_of_the_void.json
 fe68c933d1252973f336155723abd1bc1b9c32c2 assets/theforge/models/item/copper_sword.json
 8c90e2da9ed6d5409f45fd9b7b4048a62d3bac46 assets/theforge/models/item/custom_diamond_sword.json
 6d3f2da596b27460bebf7d25bbd1fe0d86e5a19a assets/theforge/models/item/custom_golden_sword.json
@@ -16,9 +18,12 @@ b7821235ce5833009625c4676c3d638f330a1b2e assets/theforge/models/item/gilded_mana
 5e5b9430910d8cfa25a93c524f62291a38ccb381 assets/theforge/models/item/gilded_rose_quartz_sword.json
 a8e568fa948d17e9226883987781c692c9fcb100 assets/theforge/models/item/gilded_smokey_quartz_sword.json
 eda5ed1a1ad0c0e2df5fc0dcc6b8ad81767baf45 assets/theforge/models/item/gilded_sunny_quartz_sword.json
+900eabcd0fba9ef620dcfdd3e5a2b148062ba426 assets/theforge/models/item/glacial_waltz.json
 c87c35bcbe432641d6927f0d1a4eec3abb2cb691 assets/theforge/models/item/gloom_blade_sword.json
 f24b79eb3c198e03fe0a96fc7e6f46bde58bc1e2 assets/theforge/models/item/harbinger_of_desire_sword.json
+34dc5f4c3fed7e5e1d5f046160d58946c26167b4 assets/theforge/models/item/seismic_blade.json
 6dbe63408534014bfc0f7d8509d9609072225bb6 assets/theforge/models/item/silver_sword.json
 d7f6e6fb76098512806eb9d8c6ad04f36b458023 assets/theforge/models/item/soulstealer_sword.json
 41179fb882322100e3d436d02a09b8cf2a000ef2 assets/theforge/models/item/star_caller_sword.json
+4b414ed25d8ab2490179304d89dc475f8ab37977 assets/theforge/models/item/sunken_blade.json
 a970feaa9c564fc5fc00d63952dff125f008d9d5 assets/theforge/models/item/zinc_sword.json

@@ -14,5 +14,6 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> FEAR = EFFECTS.register("fear",
             () -> new FearEffect(MobEffectCategory.HARMFUL, 0x5CFFFF));
 
-
+    public static final RegistryObject<MobEffect> FREEZING = EFFECTS.register("freezing",
+            () -> new FreezingEffect());
 }
