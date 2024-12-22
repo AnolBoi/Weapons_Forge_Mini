@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 
 public class BlackHoleEntity extends Entity {
+    private static final double DAMAGE_THRESHOLD = 1.0D;
     private static final double SUCK_RADIUS = 7.0D;
     private static final double SUCK_STRENGTH = 0.30D; // Higher means stronger pull
     private static final int DAMAGE_INTERVAL = 20; // ticks between damage applications
@@ -60,12 +61,16 @@ public class BlackHoleEntity extends Entity {
         for (Entity entity : level().getEntities(this, area)) {
             boolean isHostileOrPlayer = (entity instanceof LivingEntity living) &&
                     (living.getType().getCategory() == net.minecraft.world.entity.MobCategory.MONSTER || entity instanceof net.minecraft.world.entity.player.Player);
-            if (entity instanceof LivingEntity living && !(entity instanceof BlackHoleEntity && isHostileOrPlayer)) {
+            if (entity instanceof LivingEntity living && !(entity instanceof BlackHoleEntity)) {
                 double dx = this.getX() - living.getX();
                 double dy = this.getY() - living.getY();
                 double dz = this.getZ() - living.getZ();
                 double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
+                if (dist <= DAMAGE_THRESHOLD) {
+                    float maxDamage = 1.0F;
+                    float damage = (float) (maxDamage * (1.0 - (dist / SUCK_RADIUS)));
+                }
                 if (dist < 0.01) dist = 0.01;
 
                 dx /= dist;
@@ -100,16 +105,10 @@ public class BlackHoleEntity extends Entity {
                 double dz = getZ() - living.getZ();
                 double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-                // Let's say we want maximum damage at the center and lower damage towards the edge.
-                // Example formula: damage = maxDamage * (1 - (dist / SUCK_RADIUS))
-                // If dist = 0 (at the center), damage = maxDamage
-                // If dist = SUCK_RADIUS, damage = 0
-                // You can clamp the value to ensure a minimum damage if desired.
-
-                float maxDamage = 1.0F; // Maximum damage at the black hole's center
+                float maxDamage = 1.0F;
                 float damage = (float) (maxDamage * (1.0 - (dist / SUCK_RADIUS)));
 
-                // Ensure damage is at least a small amount
+
                 if (damage < 0.4F) {
                     damage = 0.4F;
                 }

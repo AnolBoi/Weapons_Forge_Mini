@@ -6,9 +6,11 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.player.Player;
@@ -31,24 +33,30 @@ public class GlacialWaltzSwordItem extends BaseLevelableSwordItem {
     @Override
     protected double getDamageForLevel(int level) {
         switch (level) {
-            case 1:  return 7;
-            case 2:  return 7.5;
-            case 3:  return 7.8;
-            case 4:  return 8;
-            case 5:  return 8.5;
-            default: return 7;
+            case 1:  return 4;
+            case 2:  return 5;
+            case 3:  return 6;
+            case 4:  return 6.5;
+            case 5:  return 7;
+            case 6: return 7.3;
+            case 7: return 7.7;
+            case 8: return 8;
+            default: return 4;
         }
     }
 
     @Override
     protected double getSpeedForLevel(int level) {
         switch (level) {
-            case 1:  return 1.8;
-            case 2:  return 1.83;
-            case 3:  return 1.85;
-            case 4:  return 1.88;
-            case 5:  return 1.9;
-            default: return 1.8;
+            case 1:  return 1.7;
+            case 2:  return 1.73;
+            case 3:  return 1.77;
+            case 4:  return 1.8;
+            case 5:  return 1.83;
+            case 6: return 1.87;
+            case 7: return 1.9;
+            case 8: return 1.95;
+            default: return 1.7;
         }
     }
 
@@ -70,39 +78,43 @@ public class GlacialWaltzSwordItem extends BaseLevelableSwordItem {
 
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack stack = player.getItemInHand(hand);
-        if (!level.isClientSide) {
-            AABB area = new AABB(player.getX() - 10, player.getY() - 10, player.getZ() - 10,
-                    player.getX() + 10, player.getY() + 10, player.getZ() + 10);
-            List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, area,
-                    e -> e != player && e.isAlive() && (e.getType().getCategory() == MobCategory.MONSTER));
-            for (LivingEntity e : entities) {
-                e.addEffect(new MobEffectInstance(ModEffects.FREEZING.get(), 100, 0, false, false,true));
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        boolean result = super.hurtEnemy(stack, target, attacker);
+        if (attacker instanceof Player player) {
+            if (!player.level().isClientSide()) {
+                int maxDuration = 200;
+                int addDuration = 100;
 
-                ServerLevel serverLevel = (ServerLevel) level;
-                for (int i = 0; i < 10; i++) {
-                    double offsetX = (level.random.nextDouble() - 0.5) * 0.5;
-                    double offsetY = (level.random.nextDouble());
-                    double offsetZ = (level.random.nextDouble() - 0.5) * 0.5;
-
-                    serverLevel.sendParticles(ParticleTypes.SNOWFLAKE,
-                            e.getX() + offsetX,
-                            e.getY() + offsetY,
-                            e.getZ() + offsetZ,
-                            3,
-                            0, 0, 0, 0.0
-                    );
+                MobEffectInstance existing = target.getEffect(ModEffects.FREEZING.get());
+                if (existing != null) {
+                    int currentDuration = existing.getDuration();
+                    int newDuration = Math.min(currentDuration + addDuration, maxDuration);
+                    target.addEffect(new MobEffectInstance(
+                            ModEffects.FREEZING.get(),
+                            newDuration,
+                            existing.getAmplifier(),
+                            existing.isAmbient(),
+                            existing.showIcon()
+                    ));
+                } else {
+                    target.addEffect(new MobEffectInstance(
+                            ModEffects.FREEZING.get(),
+                            addDuration,
+                            1,
+                            false,
+                            false,
+                            true
+                    ));
                 }
             }
-            player.getCooldowns().addCooldown(this, 200);
         }
-        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+
+        return result;
     }
 
     @Override
     public Component getName(ItemStack stack) {
         return Component.translatable(this.getDescriptionId(stack))
-                .withStyle(style -> style.withColor(TextColor.parseColor("#FCC910")));
+                .withStyle(style -> style.withColor(TextColor.parseColor("#AF30F2")));
     }
 }

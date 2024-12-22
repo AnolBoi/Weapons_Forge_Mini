@@ -27,39 +27,29 @@ public class CallOfTheVoidSwordItem extends BaseLevelableSwordItem {
         super(Tiers.DIAMOND, 9, -2.45F, properties);
     }
 
-    protected int maxLevelVoid = 10;
+    protected int maxLevelVoid = 5;
 
     @Override
     protected double getDamageForLevel(int level) {
         switch (level) {
-            case 1:  return 7.5;
-            case 2:  return 7.7;
-            case 3:  return 7.9;
-            case 4:  return 8.1;
-            case 5:  return 8.4;
-            case 6:  return 8.8;
-            case 7:  return 9.5;
-            case 8:  return 10;
-            case 9:  return 10.5;
-            case 10: return 11.5;
-            default: return 8.5;
+            case 1:  return 10.5;
+            case 2:  return 11.0;
+            case 3:  return 11.5;
+            case 4:  return 12.5;
+            case 5:  return 13.5;
+            default: return 10.5;
         }
     }
 
     @Override
     protected double getSpeedForLevel(int level) {
         switch (level) {
-            case 1:  return 1.6;
-            case 2:  return 1.62;
-            case 3:  return 1.64;
-            case 4:  return 1.66;
-            case 5:  return 1.68;
-            case 6:  return 1.7;
-            case 7:  return 1.72;
-            case 8:  return 1.75;
-            case 9:  return 1.78;
-            case 10: return 1.78;
-            default: return 1.6;
+            case 1:  return 1.45;
+            case 2:  return 1.48;
+            case 3:  return 1.50;
+            case 4:  return 1.52;
+            case 5:  return 1.55;
+            default: return 1.45;
         }
     }
 
@@ -107,6 +97,6 @@ public class CallOfTheVoidSwordItem extends BaseLevelableSwordItem {
     @Override
     public Component getName(ItemStack stack) {
         return Component.translatable(this.getDescriptionId(stack))
-                .withStyle(style -> style.withColor(TextColor.parseColor("#FCC910")));
+                .withStyle(style -> style.withColor(TextColor.parseColor("#F71EF7")));
     }
 }

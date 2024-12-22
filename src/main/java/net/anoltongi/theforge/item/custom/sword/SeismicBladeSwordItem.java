@@ -107,7 +107,7 @@ public class SeismicBladeSwordItem extends BaseLevelableSwordItem {
     @Override
     public Component getName(ItemStack stack) {
         return Component.translatable(this.getDescriptionId(stack))
-                .withStyle(style -> style.withColor(TextColor.parseColor("#AF30F2")));
+                .withStyle(style -> style.withColor(TextColor.parseColor("#F71EF7")));
     }
 
     @Override
@@ -130,11 +130,10 @@ public class SeismicBladeSwordItem extends BaseLevelableSwordItem {
             for (LivingEntity e : entities) {
                 e.setNoGravity(true);
                 e.setDeltaMovement(e.getDeltaMovement().x, 1.0, e.getDeltaMovement().z);
-                e.tick();
                 e.setNoGravity(false);
 
-                double baseAttackDamage = player.getAttributeValue(Attributes.ATTACK_DAMAGE);
-                float totalDamage = (float)(baseAttackDamage + smashDmg);
+                //double baseAttackDamage = player.getAttributeValue(Attributes.ATTACK_DAMAGE);
+                float totalDamage = (float)(smashDmg);
 
                 DamageSource smashSource = player.level().damageSources().playerAttack(player);
                 e.hurt(smashSource, totalDamage);
@@ -153,7 +152,7 @@ public class SeismicBladeSwordItem extends BaseLevelableSwordItem {
                     }
                 }
                 level.playSound(null, player.blockPosition(), SoundEvents.WARDEN_SONIC_BOOM,
-                        SoundSource.PLAYERS, 1.0F, 1.0F);
+                        SoundSource.PLAYERS, 0.5F, 1.0F);
             }
 
             player.getCooldowns().addCooldown(this, 300);

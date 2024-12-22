@@ -2,6 +2,7 @@ package net.anoltongi.theforge.item;
 import net.anoltongi.theforge.TheForgeMod;
 import net.anoltongi.theforge.item.custom.sword.*;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -10,6 +11,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
+    public static final Rarity RARITY_LEGENDARY = Rarity.create("theforge:legendary", style -> style.withColor(0XFCC910));
+
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TheForgeMod.MOD_ID);
 
@@ -50,7 +53,7 @@ public class ModItems {
             () -> new HarbingerOfDesireSwordItem(new Item.Properties().durability(1800)));
 
     public static final RegistryObject<Item> STAR_CALLER_SWORD = ITEMS.register("star_caller_sword",
-            () -> new StarCallerSwordItem(new Item.Properties().durability(1700)));
+            () -> new StarCallerSwordItem(new Item.Properties().durability(1700).rarity(RARITY_LEGENDARY)));
 
     public static final RegistryObject<Item> CUSTOM_DIAMOND_SWORD = ITEMS.register("custom_diamond_sword",
             () -> new CustomDiamondSwordItem(new Item.Properties().durability(1600)));

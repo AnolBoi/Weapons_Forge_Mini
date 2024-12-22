@@ -76,12 +76,12 @@ public class AurorasEdgeSwordItem extends BaseLevelableSwordItem {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide) {
-            AABB area = new AABB(player.getX() - 10, player.getY() - 10, player.getZ() - 10,
-                    player.getX() + 10, player.getY() + 10, player.getZ() + 10);
+            AABB area = new AABB(player.getX() - 7, player.getY() - 7, player.getZ() - 7,
+                    player.getX() + 7, player.getY() + 7, player.getZ() + 7);
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, area,
                     e -> e != player && e.isAlive() && (e.getType().getCategory() == MobCategory.MONSTER));
             for (LivingEntity e : entities) {
-                e.addEffect(new MobEffectInstance(ModEffects.FREEZING.get(), 160, 1, false, false,true));
+                e.addEffect(new MobEffectInstance(ModEffects.FREEZING.get(), 160, 0, false, false,true));
 
                 ServerLevel serverLevel = (ServerLevel) level;
                 for (int i = 0; i < 10; i++) {

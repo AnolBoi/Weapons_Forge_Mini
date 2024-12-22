@@ -41,7 +41,7 @@ public class StarCallerSwordItem extends BaseLevelableSwordItem{
             case 8:  return 10;
             case 9:  return 10.5;
             case 10: return 11.5;
-            default: return 8.5;
+            default: return 7.5;
         }
     }
 
