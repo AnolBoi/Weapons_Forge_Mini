@@ -24,13 +24,28 @@
   "item.theforge.custom_stone_sword": "Stone Sword",
   "item.theforge.zinc_sword": "Zinc Sword",
   "item.theforge.brass_sword": "Brass Sword",
-  "item.theforge.call_of_the_void": "Call of The Void",
+  "item.theforge.call_of_the_void": "Call of the Void",
   "item.theforge.auroras_edge": "Aurora's Edge",
   "item.theforge.sunken_blade": "Sunken Blade",
   "item.theforge.glacial_waltz": "Glacial Waltz",
   "item.theforge.seismic_blade": "Seismic Blade",
 
-  "rarity.theforge.legendary": "Legendary",
+  "item.theforge.palladium_ingot": "Palladium Ingot",
+  "item.theforge.palladium_nugget": "Palladium Nugget",
+  "item.theforge.palladium_rod": "Palladium Rod",
+
+  "item.theforge.darksteel_ingot": "Darksteel Ingot",
+  "item.theforge.darksteel_nugget": "Darksteel Nugget",
+  "item.theforge.darksteel_rod": "Darksteel Rod",
+
+
+
+
+  "rarity.theforge.common.name": "Common",
+  "rarity.theforge.rare.name": "Rare",
+  "rarity.theforge.epic.name": "Epic",
+  "rarity.theforge.legendary.name": "Legendary",
+  "rarity.theforge.mythical.name": "Mythical",
 
   "effect.theforge.fear": "Fear",
   "effect.theforge.freezing": "Freezing"

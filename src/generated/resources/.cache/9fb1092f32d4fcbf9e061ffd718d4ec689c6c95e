@@ -1,1 +1,5 @@
-// 1.20.1	2024-12-02T22:11:22.6081912	Recipes
+// 1.20.1	2024-12-22T22:06:03.4498349	Recipes
+922f8c4b4662d6c7011147ea8a53080959d33b8a data/theforge/advancements/recipes/misc/darksteel_nugget.json
+9b3558e160ba5736ea03a50571131cf9c44595f5 data/theforge/advancements/recipes/misc/palladium_nugget.json
+03601753aca3f98f69cf0f02f694392dd4b1c806 data/theforge/recipes/darksteel_nugget.json
+03b1dcef96db1234e3733ce525e3003deda7b7aa data/theforge/recipes/palladium_nugget.json

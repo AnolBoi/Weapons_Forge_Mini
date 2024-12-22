@@ -19,6 +19,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ModItems.PALLADIUM_INGOT);
+        simpleItem(ModItems.PALLADIUM_NUGGET);
+        simpleItem(ModItems.PALLADIUM_ROD);
+        simpleItem(ModItems.DARKSTEEL_INGOT);
+        simpleItem(ModItems.DARKSTEEL_NUGGET);
+        simpleItem(ModItems.DARKSTEEL_ROD);
+
         handheldItem(ModItems.GILDED_ROSE_QUARTZ_SWORD);
         handheldItem(ModItems.GILDED_BLAZE_QUARTZ_SWORD);
         handheldItem(ModItems.GILDED_LAVENDER_QUARTZ_SWORD);

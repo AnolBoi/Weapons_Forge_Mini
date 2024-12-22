@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-11T21:21:31.2576153	Item Models: theforge
+// 1.20.1	2024-12-22T22:06:03.4488303	Item Models: theforge
 d324d835bc7e880c93d4e216e0d79284f21a0de3 assets/theforge/models/item/amethyst_sword.json
 784cabb19f984200f29fbb661c1f0f50a7a81384 assets/theforge/models/item/auroras_edge.json
 fbc1bc5c5e832ab99c6b3d6c3eeb8dc973df2fcf assets/theforge/models/item/bloodlust_sword.json
@@ -11,6 +11,9 @@ fe68c933d1252973f336155723abd1bc1b9c32c2 assets/theforge/models/item/copper_swor
 7e829d51b7a57e1db722da02ad9890d0136c892a assets/theforge/models/item/custom_netherite_sword.json
 5b8206e19937af67269258517ee4064dcbdd6fc4 assets/theforge/models/item/custom_stone_sword.json
 b7b4c508652e34f8058629f59d893644e0a39183 assets/theforge/models/item/custom_wooden_sword.json
+f2b13bf05c17a8b11b089e0795a85ed1a773d743 assets/theforge/models/item/darksteel_ingot.json
+cf177463d982b72ab7e6588e27dc2d5dc206d081 assets/theforge/models/item/darksteel_nugget.json
+1835d270ec872bc91c5c63a990864ec9b68883e4 assets/theforge/models/item/darksteel_rod.json
 502694ea3c384956f6dea791f40a35d8ef4232c2 assets/theforge/models/item/gilded_blaze_quartz_sword.json
 7006158ea64bb7aeca34f98f4fb41587c7270d7a assets/theforge/models/item/gilded_elven_quartz_sword.json
 bb5387fbfb36c226351917350ac077bc96c1b116 assets/theforge/models/item/gilded_lavender_quartz_sword.json
@@ -21,6 +24,9 @@ eda5ed1a1ad0c0e2df5fc0dcc6b8ad81767baf45 assets/theforge/models/item/gilded_sunn
 900eabcd0fba9ef620dcfdd3e5a2b148062ba426 assets/theforge/models/item/glacial_waltz.json
 c87c35bcbe432641d6927f0d1a4eec3abb2cb691 assets/theforge/models/item/gloom_blade_sword.json
 f24b79eb3c198e03fe0a96fc7e6f46bde58bc1e2 assets/theforge/models/item/harbinger_of_desire_sword.json
+c624efe16998a8f3a99fdb6b6b22d98fe98ab306 assets/theforge/models/item/palladium_ingot.json
+68c581fc2b6823446b55fb2084f9840b71dd8f39 assets/theforge/models/item/palladium_nugget.json
+11f515a7a81408cebf81573785008d841f777ab6 assets/theforge/models/item/palladium_rod.json
 34dc5f4c3fed7e5e1d5f046160d58946c26167b4 assets/theforge/models/item/seismic_blade.json
 6dbe63408534014bfc0f7d8509d9609072225bb6 assets/theforge/models/item/silver_sword.json
 d7f6e6fb76098512806eb9d8c6ad04f36b458023 assets/theforge/models/item/soulstealer_sword.json

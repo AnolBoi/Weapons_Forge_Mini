@@ -63,7 +63,12 @@ public class TheForgeMod
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-
+            event.accept(ModItems.PALLADIUM_INGOT);
+            event.accept(ModItems.PALLADIUM_NUGGET);
+            event.accept(ModItems.PALLADIUM_ROD);
+            event.accept(ModItems.DARKSTEEL_INGOT);
+            event.accept(ModItems.DARKSTEEL_NUGGET);
+            event.accept(ModItems.DARKSTEEL_ROD);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
         }

@@ -17,6 +17,13 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.GILDED_ROSE_QUARTZ_SWORD.get()))
                     .title(Component.translatable("creativetab.theforge"))
                     .displayItems((displayParameters, output) -> {
+                        output.accept(ModItems.PALLADIUM_INGOT.get());
+                        output.accept(ModItems.PALLADIUM_NUGGET.get());
+                        output.accept(ModItems.PALLADIUM_ROD.get());
+                        output.accept(ModItems.DARKSTEEL_INGOT.get());
+                        output.accept(ModItems.DARKSTEEL_NUGGET.get());
+                        output.accept(ModItems.DARKSTEEL_ROD.get());
+
                         output.accept(ModItems.AMETHYST_SWORD.get());
                         output.accept(ModItems.GILDED_BLAZE_QUARTZ_SWORD.get());
                         output.accept(ModItems.GILDED_ELVEN_QUARTZ_SWORD.get());
