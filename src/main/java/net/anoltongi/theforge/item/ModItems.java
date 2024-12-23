@@ -1,5 +1,6 @@
 package net.anoltongi.theforge.item;
 import net.anoltongi.theforge.TheForgeMod;
+import net.anoltongi.theforge.item.custom.augment.BaseAugmentItem;
 import net.anoltongi.theforge.item.custom.sword.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -103,6 +104,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> SEISMIC_BLADE_SWORD = ITEMS.register("seismic_blade",
             () -> new SeismicBladeSwordItem(new Item.Properties().durability(2200).rarity(RARITY_MYTHICAL)));
+
+
+
+    public static final RegistryObject<Item> SCOURGE_UNDEAD_ITEM = ITEMS.register("scourge_undead_item",
+            () -> new BaseAugmentItem("scourge_undead", new Item.Properties().rarity(RARITY_RARE)));
+
+    public static final RegistryObject<Item> SCARABS_BANE_ITEM = ITEMS.register("scarabs_bane_item",
+            () -> new BaseAugmentItem("scarabs_bane", new Item.Properties().rarity(RARITY_RARE)));
+
+    public static final RegistryObject<Item> MATERIALIST_ITEM = ITEMS.register("materialist_item",
+            () -> new BaseAugmentItem("materialist", new Item.Properties().rarity(RARITY_EPIC)));
+
+    public static final RegistryObject<Item> ABLAZE_ITEM = ITEMS.register("ablaze_item",
+            () -> new BaseAugmentItem("ablaze", new Item.Properties().rarity(RARITY_EPIC)));
+
 
 
     public static final RegistryObject<Item> PALLADIUM_INGOT = ITEMS.register("palladium_ingot",
