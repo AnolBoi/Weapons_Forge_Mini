@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LootingLevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
@@ -43,7 +44,44 @@ public class AugmentEvents {
             int burnTime = 3 + (ablazeLvl - 1) * 2; // example
             event.getEntity().setSecondsOnFire(burnTime);
         }
+        int faeLvl = BaseLevelableSwordItem.getAugmentLevel(weapon, "blessing_of_faes");
+        if (faeLvl > 0) {
+            // Optionally check if Botania is loaded:
+            if (ModList.get().isLoaded("botania")) {
+                double chance = 0.05 * faeLvl; // 5% per level
+                if (Math.random() < chance) {
+                    // spawn your pixie or a placeholder
+                    spawnPixie(player, event.getEntity(), faeLvl);
+                }
+            }
+        }
+
+        // 2) EVERLASTING - partial logic, for unbreaking-like effect on attack
+        int everlastingLvl = BaseLevelableSwordItem.getAugmentLevel(weapon, "everlasting");
+        if (everlastingLvl > 0 && everlastingLvl <= 5) {
+            // treat it like unbreaking I..V
+            // we'll do the actual "skip damage usage" in the sword's 'hurtEnemy' override or
+            // check it here if you want. This is a placeholder if you want damage-based logic.
+        }
+        // if (everlastingLvl >= 7) => skip durability usage entirely (usually in hurtEnemy).
     }
+
+
+
+    private static void spawnPixie(Player player, LivingEntity target, int faeLevel) {
+        //BotaniaAPI.spawnPixie(...);
+
+        // else do a placeholder message or effect:
+        player.sendSystemMessage(
+                net.minecraft.network.chat.Component.literal(
+                        "A fae sparkles around you, helping in battle! (faeLevel=" + faeLevel + ")"));
+        // If you want an actual entity, define your own
+        // 'FaeEntity' and spawn it:
+        // FaeEntity fae = new FaeEntity(...);
+        // set position near target or player
+        // player.level().addFreshEntity(fae);
+    }
+
 
     private static double getDamageBonus(int level, int max, double basePercent, double maxPercent) {
         // If basePercent = 0.10, maxPercent = 0.50, level=6 => 0.50
@@ -52,6 +90,14 @@ public class AugmentEvents {
         if (level >= max) return maxPercent;
         double step = (maxPercent - basePercent) / (max - 1);
         return basePercent + step * (level - 1);
+    }
+
+    private static void repairWeapon(ItemStack stack, int amount) {
+        int damage = stack.getDamageValue();
+        if (damage > 0) {
+            int toRepair = Math.min(damage, amount);
+            stack.setDamageValue(damage - toRepair);
+        }
     }
 
     private static boolean isUndead(LivingEntity entity) {

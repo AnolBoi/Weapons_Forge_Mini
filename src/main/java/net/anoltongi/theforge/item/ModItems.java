@@ -119,6 +119,12 @@ public class ModItems {
     public static final RegistryObject<Item> ABLAZE_ITEM = ITEMS.register("ablaze_item",
             () -> new BaseAugmentItem("ablaze", new Item.Properties().rarity(RARITY_EPIC)));
 
+    public static final RegistryObject<Item> EVERLASTING = ITEMS.register("everlasting_item",
+            () -> new BaseAugmentItem("everlasting", new Item.Properties().rarity(RARITY_MYTHICAL)));
+
+    public static final RegistryObject<Item> BLESSING_OF_FAES = ITEMS.register("blessing_of_faes_item",
+            () -> new BaseAugmentItem("blessing_of_fa3s", new Item.Properties().rarity(RARITY_LEGENDARY)));
+
 
 
     public static final RegistryObject<Item> PALLADIUM_INGOT = ITEMS.register("palladium_ingot",

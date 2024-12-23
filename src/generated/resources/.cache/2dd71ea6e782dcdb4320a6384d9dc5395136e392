@@ -1,6 +1,8 @@
-// 1.20.1	2024-12-22T22:06:03.4488303	Item Models: theforge
+// 1.20.1	2024-12-23T22:55:17.7309031	Item Models: theforge
+4795d44bf2fbf7dda2cead06d8c02a00e4730179 assets/theforge/models/item/ablaze_item.json
 d324d835bc7e880c93d4e216e0d79284f21a0de3 assets/theforge/models/item/amethyst_sword.json
 784cabb19f984200f29fbb661c1f0f50a7a81384 assets/theforge/models/item/auroras_edge.json
+0d7d716500ba419d07f26a0a0f48659e550777b6 assets/theforge/models/item/blessing_of_faes_item.json
 fbc1bc5c5e832ab99c6b3d6c3eeb8dc973df2fcf assets/theforge/models/item/bloodlust_sword.json
 e0291940fee9a53bc75a0f0a65d04edc91938527 assets/theforge/models/item/brass_sword.json
 06baa6357a2908c30fd464e8f547927fa1c1ea98 assets/theforge/models/item/call_of_the_void.json
@@ -14,6 +16,7 @@ b7b4c508652e34f8058629f59d893644e0a39183 assets/theforge/models/item/custom_wood
 f2b13bf05c17a8b11b089e0795a85ed1a773d743 assets/theforge/models/item/darksteel_ingot.json
 cf177463d982b72ab7e6588e27dc2d5dc206d081 assets/theforge/models/item/darksteel_nugget.json
 1835d270ec872bc91c5c63a990864ec9b68883e4 assets/theforge/models/item/darksteel_rod.json
+a0f884ef9d3bfde9a9f88f7cddeab6061e073ecc assets/theforge/models/item/everlasting_item.json
 502694ea3c384956f6dea791f40a35d8ef4232c2 assets/theforge/models/item/gilded_blaze_quartz_sword.json
 7006158ea64bb7aeca34f98f4fb41587c7270d7a assets/theforge/models/item/gilded_elven_quartz_sword.json
 bb5387fbfb36c226351917350ac077bc96c1b116 assets/theforge/models/item/gilded_lavender_quartz_sword.json
@@ -24,9 +27,12 @@ eda5ed1a1ad0c0e2df5fc0dcc6b8ad81767baf45 assets/theforge/models/item/gilded_sunn
 900eabcd0fba9ef620dcfdd3e5a2b148062ba426 assets/theforge/models/item/glacial_waltz.json
 c87c35bcbe432641d6927f0d1a4eec3abb2cb691 assets/theforge/models/item/gloom_blade_sword.json
 f24b79eb3c198e03fe0a96fc7e6f46bde58bc1e2 assets/theforge/models/item/harbinger_of_desire_sword.json
+f8b0251abb96beef325238a4c80d1ac01a7782f6 assets/theforge/models/item/materialist_item.json
 c624efe16998a8f3a99fdb6b6b22d98fe98ab306 assets/theforge/models/item/palladium_ingot.json
 68c581fc2b6823446b55fb2084f9840b71dd8f39 assets/theforge/models/item/palladium_nugget.json
 11f515a7a81408cebf81573785008d841f777ab6 assets/theforge/models/item/palladium_rod.json
+319295b92ac2767bc34dcd6bb3f97eb579457a96 assets/theforge/models/item/scarabs_bane_item.json
+db3fd6b9d3dac5c7730b3fe30dba50f333c6fbaa assets/theforge/models/item/scourge_undead_item.json
 34dc5f4c3fed7e5e1d5f046160d58946c26167b4 assets/theforge/models/item/seismic_blade.json
 6dbe63408534014bfc0f7d8509d9609072225bb6 assets/theforge/models/item/silver_sword.json
 d7f6e6fb76098512806eb9d8c6ad04f36b458023 assets/theforge/models/item/soulstealer_sword.json

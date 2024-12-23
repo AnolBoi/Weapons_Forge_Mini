@@ -13,6 +13,7 @@ import net.minecraft.nbt.NbtUtils;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -178,6 +179,28 @@ public abstract class BaseLevelableSwordItem extends SwordItem {
 
     // endregion
 
+    //region: everlasting hurtEnemy unbreaking method
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        // base logic
+        boolean result = super.hurtEnemy(stack, target, attacker);
+        int lvl = getAugmentLevel(stack, "everlasting");
+        if (lvl >= 7) {
+            // infinite durability => revert any damage done in super
+            stack.setDamageValue(0);
+        } else if (lvl > 0 && lvl <= 5) {
+            // chance-based unbreaking
+            // e.g. check random, if success => revert 1 damage
+            // or do partial skip
+            if (new Random().nextInt(lvl + 1) != 0) {
+                // skip 1 damage
+                if (stack.getDamageValue() > 0) {
+                    stack.setDamageValue(stack.getDamageValue() - 1);
+                }
+            }
+        }
+        return result;
+    }
 
     // region: TOOLTIP
 
@@ -205,4 +228,6 @@ public abstract class BaseLevelableSwordItem extends SwordItem {
     }
 
     // endregion
+
+
 }

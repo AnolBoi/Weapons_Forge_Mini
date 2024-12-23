@@ -8,7 +8,18 @@ public class AugmentManager {
     public static final String SCARABS_BANE = "scarabs_bane";
     public static final String MATERIALIST = "materialist";
     public static final String ABLAZE = "ablaze";
+    public static final String BLESSING_OF_FAES = "blessing_of_faes";
+    public static final String EVERLASTING = "everlasting";
 
+    public static Map<String, Integer> AUGMENT_MAX_LEVELS = new HashMap<>();
+    static {
+        AUGMENT_MAX_LEVELS.put("scourge_undead", 6);
+        AUGMENT_MAX_LEVELS.put("scarabs_bane", 6);
+        AUGMENT_MAX_LEVELS.put("materialist", 3);
+        AUGMENT_MAX_LEVELS.put("ablaze", 3);
+        AUGMENT_MAX_LEVELS.put("blessing_of_faes", 5);
+        AUGMENT_MAX_LEVELS.put("everlasting", 7);
+    }
     // Let's store some data about each augment
     private static Map<String, AugmentInfo> AUGMENTS = new HashMap<>();
     static {
@@ -20,17 +31,14 @@ public class AugmentManager {
                 "Increases looting."));
         AUGMENTS.put(ABLAZE, new AugmentInfo("Ablaze", 3,
                 "Ignites attacked mobs"));
+        AUGMENTS.put(BLESSING_OF_FAES, new AugmentInfo("Blessing of Faes", 7,
+                "Chance to spawn pixies which help the wielder attack."));
+        AUGMENTS.put(EVERLASTING, new AugmentInfo("Everlasting", 7,
+                "Increases the durability of the affected weapon."));
     }
 
     public static AugmentInfo getAugmentInfo(String id) {
         return AUGMENTS.getOrDefault(id, null);
-    }
-
-    // Format e.g., "Scourge of the Undead III"
-    public static String formatAugment(String id, int level) {
-        AugmentInfo info = getAugmentInfo(id);
-        if (info == null) return id + " " + level;
-        return info.name + " " + toRoman(level);
     }
 
     private static String toRoman(int level) {
@@ -44,6 +52,13 @@ public class AugmentManager {
             case 6: return "VI";
             default: return "?";
         }
+    }
+
+    // Format e.g., "Scourge of the Undead III"
+    public static String formatAugment(String id, int level) {
+        AugmentInfo info = getAugmentInfo(id);
+        if (info == null) return id + " " + level;
+        return info.name + " " + toRoman(level);
     }
 
     public static class AugmentInfo {

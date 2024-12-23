@@ -26,6 +26,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DARKSTEEL_NUGGET);
         simpleItem(ModItems.DARKSTEEL_ROD);
 
+        simpleItem(ModItems.ABLAZE_ITEM);
+        simpleItem(ModItems.MATERIALIST_ITEM);
+        simpleItem(ModItems.SCARABS_BANE_ITEM);
+        simpleItem(ModItems.SCOURGE_UNDEAD_ITEM);
+        simpleItem(ModItems.BLESSING_OF_FAES);
+        simpleItem(ModItems.EVERLASTING);
+
         handheldItem(ModItems.GILDED_ROSE_QUARTZ_SWORD);
         handheldItem(ModItems.GILDED_BLAZE_QUARTZ_SWORD);
         handheldItem(ModItems.GILDED_LAVENDER_QUARTZ_SWORD);

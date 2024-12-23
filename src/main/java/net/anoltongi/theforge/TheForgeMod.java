@@ -87,6 +87,14 @@ public class TheForgeMod
             event.accept(ModItems.HARBINGER_OF_DESIRE_SWORD);
             event.accept(ModItems.STAR_CALLER_SWORD);
         }
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
+            event.accept(ModItems.ABLAZE_ITEM);
+            event.accept(ModItems.MATERIALIST_ITEM);
+            event.accept(ModItems.SCARABS_BANE_ITEM);
+            event.accept(ModItems.SCOURGE_UNDEAD_ITEM);
+            event.accept(ModItems.BLESSING_OF_FAES);
+            event.accept(ModItems.EVERLASTING);
+        }
     }
 
 

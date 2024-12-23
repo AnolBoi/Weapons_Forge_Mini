@@ -53,6 +53,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SUNKEN_BLADE_SWORD.get());
                         output.accept(ModItems.GLACIAL_WALTZ_SWORD.get());
                         output.accept(ModItems.SEISMIC_BLADE_SWORD.get());
+
+                        output.accept(ModItems.ABLAZE_ITEM.get());
+                        output.accept(ModItems.MATERIALIST_ITEM.get());
+                        output.accept(ModItems.SCARABS_BANE_ITEM.get());
+                        output.accept(ModItems.SCOURGE_UNDEAD_ITEM.get());
+                        output.accept(ModItems.BLESSING_OF_FAES.get());
+                        output.accept(ModItems.EVERLASTING.get());
                     }).build());
 
 
